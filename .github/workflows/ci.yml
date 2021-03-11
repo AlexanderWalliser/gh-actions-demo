@@ -34,6 +34,13 @@ jobs:
           user: ubuntu
           key: ${{ secrets.ORAVM }}
 
+      - name: start on server
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: java -jar /opt/gh-actions-demo-1.0.0-SNAPSHOT.jar
+          host: 130.61.191.101
+          username: ubuntu
+          privateKey: ${{ secrets.ORAVM }}
 
 #      - name: create .ssh/known_hosts
 #        run: |
